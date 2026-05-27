@@ -1,0 +1,285 @@
+/* =========================================================
+   McKenna.Live — Retro/Neon AI Design System
+   Tokens: colors, type, motion, spacing, shadows
+   ========================================================= */
+
+/* ---------- WEBFONTS ----------
+   Substitution note: site originally used Segoe UI.
+   We upgrade to a synthwave-leaning stack to match the
+   "80s neon + AI new-age" direction. All Google Fonts.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=VT323&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ─────────── COLORS — RAW PALETTE ─────────── */
+  /* Deep space backgrounds (cooler than original #0d0d16) */
+  --ink-900: #06010f;          /* deepest, page bg */
+  --ink-800: #0c0426;          /* primary bg */
+  --ink-700: #14082e;          /* card bg */
+  --ink-600: #1c0c3a;          /* raised bg */
+  --ink-500: #2a124d;          /* hairline / dividers */
+
+  /* Neon — the brand's voltage */
+  --neon-magenta:  #ff2e9a;    /* primary neon — hot pink */
+  --neon-violet:   #b026ff;    /* secondary neon */
+  --neon-cyan:     #00f0ff;    /* accent — AI / tech */
+  --neon-yellow:   #f5e663;    /* highlight / warning */
+  --neon-orange:   #ff6b35;    /* sunset orange */
+  --neon-green:    #4dff9f;    /* success / live indicator */
+
+  /* Chrome / light surface */
+  --chrome-50:  #f3edff;       /* near-white tinted violet */
+  --chrome-100: #d8caff;       /* lavender tint */
+  --chrome-200: #a89cd9;       /* muted lavender */
+  --chrome-300: #6e6394;       /* dim text */
+
+  /* Sunset gradient stops (used in horizons + buttons) */
+  --sunset-1: #ff2e9a;
+  --sunset-2: #ff6b35;
+  --sunset-3: #f5e663;
+
+  /* ─────────── SEMANTIC COLORS ─────────── */
+  --bg:           var(--ink-900);
+  --bg-elevated:  var(--ink-800);
+  --bg-card:      var(--ink-700);
+  --bg-raised:    var(--ink-600);
+  --bg-overlay:   rgba(6, 1, 15, .72);
+
+  --fg-1:         var(--chrome-50);    /* primary text */
+  --fg-2:         var(--chrome-100);   /* secondary text */
+  --fg-3:         var(--chrome-200);   /* tertiary / labels */
+  --fg-muted:     var(--chrome-300);   /* faded body */
+
+  --accent:       var(--neon-magenta);
+  --accent-2:     var(--neon-cyan);
+  --accent-3:     var(--neon-violet);
+  --link:         var(--neon-cyan);
+
+  --success:      var(--neon-green);
+  --warning:      var(--neon-yellow);
+  --danger:       var(--neon-orange);
+  --live:         var(--neon-magenta);
+
+  --border:       rgba(176, 38, 255, .28);     /* violet hairline */
+  --border-hot:   rgba(255, 46, 154, .55);
+  --border-cool:  rgba(0, 240, 255, .35);
+  --grid-line:    rgba(176, 38, 255, .18);
+
+  /* ─────────── TYPOGRAPHY — FAMILIES ─────────── */
+  --font-display: 'Orbitron', 'Eurostile', 'Helvetica Neue', sans-serif;
+  --font-body:    'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  --font-crt:     'VT323', 'Courier New', monospace;  /* terminal / AI readout */
+
+  /* ─────────── TYPE SCALE ─────────── */
+  --fs-9: clamp(4.5rem, 12vw, 8rem);     /* hero name */
+  --fs-8: clamp(3rem, 7vw, 4.5rem);      /* display */
+  --fs-7: clamp(2.25rem, 5vw, 3rem);     /* h1 / section */
+  --fs-6: clamp(1.6rem, 3.2vw, 2.25rem); /* h2 */
+  --fs-5: 1.5rem;                        /* h3 */
+  --fs-4: 1.125rem;                      /* h4 / lead */
+  --fs-3: 1rem;                          /* body */
+  --fs-2: 0.875rem;                      /* small */
+  --fs-1: 0.75rem;                       /* eyebrow / label */
+  --fs-0: 0.625rem;                      /* micro */
+
+  /* ─────────── LINE HEIGHT / TRACKING ─────────── */
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-normal:  1.55;
+  --lh-loose:   1.75;
+
+  --tr-tight:   -0.02em;
+  --tr-normal:   0;
+  --tr-wide:     0.06em;
+  --tr-wider:    0.14em;
+  --tr-widest:   0.24em;     /* eyebrow caps */
+
+  /* ─────────── SPACING (8pt × 1.5) ─────────── */
+  --sp-0: 0;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* ─────────── RADII ─────────── */
+  --radius-1: 4px;       /* chip / inline */
+  --radius-2: 8px;       /* button */
+  --radius-3: 12px;      /* card */
+  --radius-4: 20px;      /* big card */
+  --radius-pill: 999px;
+
+  /* ─────────── ELEVATION / GLOW ─────────── */
+  /* Synthwave doesn't do soft drop shadows — it glows. */
+  --glow-magenta-sm: 0 0 12px rgba(255, 46, 154, .55);
+  --glow-magenta-md: 0 0 24px rgba(255, 46, 154, .55), 0 0 60px rgba(255, 46, 154, .25);
+  --glow-magenta-lg: 0 0 40px rgba(255, 46, 154, .65), 0 0 120px rgba(255, 46, 154, .35);
+  --glow-cyan-sm:    0 0 12px rgba(0, 240, 255, .55);
+  --glow-cyan-md:    0 0 24px rgba(0, 240, 255, .55), 0 0 60px rgba(0, 240, 255, .2);
+  --glow-violet-md:  0 0 28px rgba(176, 38, 255, .55), 0 0 80px rgba(176, 38, 255, .25);
+  --shadow-card:     0 12px 40px rgba(176, 38, 255, .18), 0 1px 0 rgba(255, 255, 255, .04) inset;
+  --shadow-pop:      0 24px 60px rgba(255, 46, 154, .22);
+
+  /* Inner highlight — adds that "polished CRT bezel" feel */
+  --inset-bezel:     inset 0 1px 0 rgba(255, 255, 255, .08), inset 0 -1px 0 rgba(0, 0, 0, .4);
+
+  /* ─────────── GRADIENTS ─────────── */
+  --grad-sunset:    linear-gradient(180deg, #f5e663 0%, #ff6b35 50%, #ff2e9a 100%);
+  --grad-magenta:   linear-gradient(135deg, #ff2e9a 0%, #b026ff 100%);
+  --grad-cyan:      linear-gradient(135deg, #00f0ff 0%, #b026ff 100%);
+  --grad-chrome:    linear-gradient(180deg, #f3edff 0%, #a89cd9 45%, #ff2e9a 50%, #ff6b35 100%);
+  --grad-horizon:   radial-gradient(ellipse 100% 70% at 50% 100%, rgba(255, 46, 154, .35) 0%, rgba(176, 38, 255, .18) 35%, transparent 70%);
+  --grad-text-hot:  linear-gradient(180deg, #fff 0%, #ffe0f0 30%, #ff2e9a 100%);
+
+  /* ─────────── MOTION ─────────── */
+  --ease-out:    cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-snap:   cubic-bezier(.25, .46, .45, .94);
+  --dur-fast:    140ms;
+  --dur:         220ms;
+  --dur-slow:    420ms;
+  --dur-stage:   800ms;
+
+  /* ─────────── LAYOUT ─────────── */
+  --container:    1180px;
+  --container-md: 920px;
+  --gutter:       24px;
+}
+
+/* =========================================================
+   SEMANTIC TEXT STYLES
+   ========================================================= */
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-3);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.display, h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--fg-1);
+  letter-spacing: var(--tr-tight);
+  line-height: var(--lh-tight);
+  font-weight: 800;
+}
+
+.display { font-size: var(--fs-8); }
+
+h1, .h1 {
+  font-size: var(--fs-7);
+  font-weight: 800;
+  margin-bottom: var(--sp-4);
+}
+
+h2, .h2 {
+  font-size: var(--fs-6);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  margin-bottom: var(--sp-4);
+}
+
+h3, .h3 {
+  font-size: var(--fs-5);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: var(--lh-snug);
+}
+
+h4, .h4 {
+  font-family: var(--font-body);
+  font-size: var(--fs-4);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+  letter-spacing: 0;
+}
+
+p { margin: 0 0 var(--sp-4); }
+
+.lead {
+  font-size: var(--fs-4);
+  color: var(--fg-2);
+  line-height: var(--lh-normal);
+}
+
+small, .small { font-size: var(--fs-2); color: var(--fg-muted); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--neon-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px; height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+
+.crt, .terminal {
+  font-family: var(--font-crt);
+  font-size: 1.25em;          /* VT323 reads small */
+  color: var(--neon-green);
+  letter-spacing: 0.02em;
+}
+
+code, .code, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--neon-cyan);
+  background: rgba(0, 240, 255, .08);
+  padding: 2px 6px;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--border-cool);
+}
+
+a { color: var(--link); text-decoration: none; transition: color var(--dur) var(--ease-out); }
+a:hover { color: var(--neon-magenta); }
+
+/* Text gradient utility — used on hero name etc */
+.text-gradient-hot {
+  background: var(--grad-text-hot);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-chrome {
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Neon stroke text — outlined letters that glow */
+.text-neon {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--neon-cyan);
+  text-shadow:
+    0 0 8px rgba(0, 240, 255, .8),
+    0 0 22px rgba(0, 240, 255, .4);
+}
+
+::selection { background: var(--neon-magenta); color: var(--ink-900); }

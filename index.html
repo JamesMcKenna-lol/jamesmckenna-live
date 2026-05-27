@@ -1,222 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>James McKenna - Senior AV Technician & Broadcast Innovator</title>
-  <meta name="description" content="Senior AV Technician & Broadcast Innovator based in Dublin, Ireland. Pioneering AI-enhanced broadcast technologies at Intercom." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>James McKenna — Senior AV Technician & Broadcast Innovator</title>
+  <meta name="description" content="Senior AV Technician & Broadcast Innovator based in Dublin, Ireland. Pioneering AI-enhanced broadcast technologies at Fin (previously Intercom)."/>
+  <link rel="stylesheet" href="tokens.css"/>
+  <link rel="icon" href="./assets/jm-logo.svg" type="image/svg+xml"/>
 </head>
 <body>
+  <div id="root"></div>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">JM</a>
-      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-      </ul>
-    </div>
-  </nav>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-inner">
-      <p class="hero-location">DUBLIN, IRELAND</p>
-      <h1 class="hero-name">James McKenna</h1>
-      <h2 class="hero-title">Senior AV Technician &amp; Broadcast Innovator</h2>
-      <p class="hero-bio">Pioneering AI-enhanced broadcast technologies at Intercom. Vision mixing, livestream direction, and cutting-edge production expertise.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        <a href="#work" class="btn btn-secondary">View Work</a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">&#8964;</div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-text">
-        <p class="section-label">ABOUT</p>
-        <h2>Transforming Broadcast Technology</h2>
-        <p>As Senior AV Technician at <strong>Intercom</strong> in Dublin, I'm pushing the boundaries of what's possible in live production and broadcast technology.</p>
-        <p>My expertise spans studio production equipment mastery, advanced software like vMix, and pioneering AI-enhanced broadcast capabilities. I bring dynamic, engaging visual experiences to life while exploring the cutting edge of media innovation.</p>
-        <p>From vision mixing to livestream direction, my passion extends beyond work—constantly refining media strategies and developing new technological solutions.</p>
-        <div class="about-cards">
-          <div class="about-card">
-            <span class="about-icon">&#x1F4E1;</span>
-            <h4>Vision Mixing</h4>
-            <p>Expert live production and seamless multi-camera switching</p>
-          </div>
-          <div class="about-card">
-            <span class="about-icon">&#x1F3AC;</span>
-            <h4>Livestream Direction</h4>
-            <p>Dynamic content creation for global audiences</p>
-          </div>
-          <div class="about-card">
-            <span class="about-icon">&#x2728;</span>
-            <h4>AI Innovation</h4>
-            <p>Developing next-gen broadcast capabilities with AI</p>
-          </div>
-        </div>
-      </div>
-      <div class="about-photo">
-        <img src="images/james-mckenna.png" alt="James McKenna" />
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work">
-    <div class="container">
-      <p class="section-label">SELECTED WORK</p>
-      <h2>Featured Projects</h2>
-      <p class="section-sub">A showcase of technical expertise and creative vision across broadcast technology and media production.</p>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="images/vision-mixing.png" alt="Vision Mixing & Live Production" />
-            <a href="#contact" class="project-link">&#8599;</a>
-          </div>
-          <div class="project-body">
-            <h3>Vision Mixing &amp; Live Production</h3>
-            <p>Professional vision mixing for live broadcasts, managing multi-camera setups and real-time switching with precision and creativity.</p>
-            <div class="tags">
-              <span>Vision Mixing</span><span>Live Production</span><span>Broadcast</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="images/robotic-tape.jpg" alt="Robotic LTO4 PetaSite Project" />
-            <a href="#contact" class="project-link">&#8599;</a>
-          </div>
-          <div class="project-body">
-            <h3>Robotic LTO4 PetaSite Project</h3>
-            <p>Spearheaded media transfer operations, enhancing storage efficiency and data integrity across enterprise-scale robotic tape systems.</p>
-            <div class="tags">
-              <span>Media Transfer</span><span>Data Management</span><span>Enterprise</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="images/home-studio.jpg" alt="Home Studio Innovation Lab" />
-            <a href="#contact" class="project-link">&#8599;</a>
-          </div>
-          <div class="project-body">
-            <h3>Home Studio Innovation Lab</h3>
-            <p>Personal media management exploration, constantly refining asset strategies and testing cutting-edge broadcast technologies.</p>
-            <div class="tags">
-              <span>Media Management</span><span>R&amp;D</span><span>Innovation</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <p class="section-label">BROADCAST SERVICES</p>
-      <h2>Drumgeeny Lane Productions</h2>
-      <p class="section-sub">A complete broadcast service delivering professional, creative live streaming and event production with cutting-edge equipment and expertise.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-icon">&#x1F4F9;</span>
-          <h4>9x Broadcast Cameras</h4>
-          <p>Professional-grade multi-camera setup for dynamic, cinematic coverage of any event or production.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">&#x1F3A4;</span>
-          <h4>Studio Audio Suite</h4>
-          <p>Complete microphone array delivering pristine audio capture for every voice and sound.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">&#x1F39B;</span>
-          <h4>VMix &amp; Vision Mixing</h4>
-          <p>Real-time live switching, mixing, and streaming with professional vision mixer expertise.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">&#x1F4F6;</span>
-          <h4>Creative Live Streams</h4>
-          <p>Engaging, interactive broadcast experiences that captivate audiences and elevate your content.</p>
-        </div>
-      </div>
-      <div class="services-cta">
-        <h3>Elevate Your Live Production</h3>
-        <p>From corporate events to creative broadcasts, Drumgeeny Lane Productions brings professional-grade equipment, technical expertise, and creative vision to transform your live content into an unforgettable experience.</p>
-        <a href="#contact" class="btn btn-primary">Discuss Your Project</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERTISE -->
-  <section id="expertise">
-    <div class="container">
-      <p class="section-label">EXPERTISE</p>
-      <h2>Technical Capabilities</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <div class="skill-header"><span>vMix</span><span>95%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-header"><span>Studio Equipment</span><span>90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-header"><span>Live Production</span><span>95%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-header"><span>AI Integration</span><span>85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-header"><span>Media Management</span><span>90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-header"><span>Broadcast Software</span><span>92%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container contact-inner">
-      <p class="section-label">LET'S CONNECT</p>
-      <h2>Ready to Create Something Exceptional?</h2>
-      <p>Whether you're looking for expert AV production, innovative broadcast solutions, or collaborative opportunities in AI-enhanced media technology.</p>
-      <div class="contact-links">
-        <a href="mailto:hi@jamesmckenna.live" class="btn btn-primary">hi@jamesmckenna.live</a>
-        <a href="https://www.linkedin.com/in/jamesmckenna" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
-      </div>
-      <p class="contact-note">Based in Dublin, Ireland &bull; Available for freelance projects and collaborations</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <span class="nav-logo">JM</span>
-      <p>&copy; 2025 James McKenna. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="About.jsx"></script>
+  <script type="text/babel" src="Work.jsx"></script>
+  <script type="text/babel" src="Services.jsx"></script>
+  <script type="text/babel" src="Expertise.jsx"></script>
+  <script type="text/babel" src="Contact.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="App.jsx"></script>
 </body>
 </html>
