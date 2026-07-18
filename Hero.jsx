@@ -13,9 +13,8 @@ const Hero = ({ onJump }) => (
         Senior AV Technician &amp; <strong>Broadcast Innovator</strong>
       </h2>
       <p className="hero-bio">
-        Pioneering AI-enhanced broadcast technologies at Fin (previously Intercom). Vision mixing, livestream
-        direction, and cutting-edge production expertise — including agentic broadcast tooling
-        at <a href="https://way-farer.io" target="_blank" rel="noopener" style={{ color: 'var(--neon-cyan)' }}>way-farer.io</a>.
+        Pioneering AI-enhanced broadcast technologies at Fin (previously Intercom) — vision mixing, livestream
+        direction, and cutting-edge production expertise. On the side, building <a href="https://way-farer.io" target="_blank" rel="noopener" style={{ color: 'var(--neon-cyan)' }}>way-farer.io</a>, an AI travel planner.
       </p>
       <div className="hero-ctas">
         <a className="btn btn-primary" onClick={() => onJump('contact')}>
