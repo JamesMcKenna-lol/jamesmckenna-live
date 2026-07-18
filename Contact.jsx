@@ -11,7 +11,7 @@ const Contact = () => (
         <a className="btn btn-primary" href="mailto:hi@jamesmckenna.live">
           <Icon name="mail" size={16}/> hi@jamesmckenna.live
         </a>
-        <a className="btn btn-secondary" href="https://www.linkedin.com/in/jamesmckenna" target="_blank" rel="noopener">
+        <a className="btn btn-secondary" href="https://www.linkedin.com/in/james-mckenna-99a0468a/" target="_blank" rel="noopener">
           <Icon name="linkedin" size={16}/> LinkedIn
         </a>
       </div>

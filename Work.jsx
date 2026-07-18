@@ -23,7 +23,7 @@ const Work = () => {
   const featured = {
     img: './assets/vision-mixing.png',
     title: 'way-farer.io',
-    blurb: 'Agentic broadcast tooling — AI agents that direct, switch, and caption live productions in real time. Built with Fin (previously Intercom) alongside the day job.',
+    blurb: 'AI-powered travel itinerary planner. Calendar-first design with drag-and-drop blocks, real-time timezone awareness, AI co-pilot suggestions, and a native touch experience built for iPhone.',
     tags: [['Agentic AI', 'cool'], ['way-farer.io', 'cool'], ['Featured', 'hot']],
   };
 
