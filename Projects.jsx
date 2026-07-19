@@ -2,9 +2,10 @@ const projectsData = [
   {
     name: 'way-farer.io',
     tagline: 'AI-powered travel planning',
-    status: 'In active development · Private beta',
+    status: 'Now live',
     accent: 'cool',
     href: 'https://way-farer.io',
+    image: './assets/wayfarer-hero.png',
     summary: [
       'Way-farer is an AI travel planner that turns a rough idea into a real, day-by-day itinerary. Instead of juggling tabs, spreadsheets and screenshots, you describe the trip you want and an AI co-pilot helps shape it — suggesting places to stay, things to do, and a sensible order to do them in.',
       'The whole experience is calendar-first: your trip is a timeline of drag-and-drop blocks you can rearrange in seconds, with real-time timezone awareness so flights, check-ins and plans always line up. It is designed to feel native and effortless on an iPhone.',
@@ -23,9 +24,13 @@ const projectsData = [
 
 const ProjectCard = ({ p }) => (
   <article className="proj">
-    <div className={'proj-preview ' + p.accent}>
-      <span className="proj-preview-name">{p.name}</span>
-    </div>
+    {p.image
+      ? <a className="proj-shot" href={p.href} target="_blank" rel="noopener">
+          <img src={p.image} alt={p.name + ' — landing page'} loading="lazy"/>
+        </a>
+      : <div className={'proj-preview ' + p.accent}>
+          <span className="proj-preview-name">{p.name}</span>
+        </div>}
     <div className="proj-body">
       <div className="proj-status">
         <span className="proj-dot"></span>{p.status}

@@ -21,7 +21,7 @@ const Work = () => {
   ];
 
   const featured = {
-    img: './assets/vision-mixing.png',
+    img: './assets/wayfarer-hero.png',
     title: 'way-farer.io',
     blurb: 'AI-powered travel itinerary planner. Calendar-first design with drag-and-drop blocks, real-time timezone awareness, AI co-pilot suggestions, and a native touch experience built for iPhone.',
     tags: [['Agentic AI', 'cool'], ['way-farer.io', 'cool'], ['Featured', 'hot']],
