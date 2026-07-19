@@ -25,6 +25,7 @@ const Work = () => {
     title: 'way-farer.io',
     blurb: 'AI-powered travel itinerary planner. Calendar-first design with drag-and-drop blocks, real-time timezone awareness, AI co-pilot suggestions, and a native touch experience built for iPhone.',
     tags: [['Agentic AI', 'cool'], ['way-farer.io', 'cool'], ['Featured', 'hot']],
+    href: 'projects.html',
   };
 
   return (
@@ -41,7 +42,9 @@ const Work = () => {
             <div className="project-card" key={i}>
               <div className="project-img">
                 <img src={p.img} alt={p.title}/>
-                <a className="project-link"><Icon name="arrowUR" size={16}/></a>
+                {p.href
+                  ? <a className="project-link" href={p.href}><Icon name="arrowUR" size={16}/></a>
+                  : <a className="project-link"><Icon name="arrowUR" size={16}/></a>}
               </div>
               <div className="project-body">
                 <h3>{p.title}</h3>
@@ -52,6 +55,11 @@ const Work = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '40px' }}>
+          <a className="btn btn-secondary" href="projects.html">
+            View Projects <Icon name="arrowUR" size={16}/>
+          </a>
         </div>
       </div>
     </section>

@@ -691,7 +691,127 @@ footer .mark span { font-family: var(--font-display); font-weight: 800; color: v
 footer p { color: var(--fg-muted); font-size: .82rem; margin: 0; font-family: var(--font-mono); letter-spacing: .04em; }
 footer .crt { color: var(--neon-green); font-family: var(--font-crt); font-size: 1.05rem; }
 
+/* ───────── PROJECTS SUB-PAGE ───────── */
+.subpage { display: block; }
+.subpage-head { padding: 148px 0 32px; }
+.subpage-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.02em;
+  margin: 14px 0 18px;
+  background: linear-gradient(180deg, #fff 0%, #ffe0f0 30%, #ff2e9a 80%, #b026ff 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px rgba(255, 46, 154, .35));
+}
+.subpage-head .section-sub { max-width: 620px; }
+.subpage-body { padding: 24px 0 120px; }
+.proj-list { display: flex; flex-direction: column; gap: 40px; }
+
+.proj {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+.proj:hover { border-color: var(--border-cool); box-shadow: 0 0 40px rgba(0, 240, 255, .12); }
+
+.proj-preview {
+  position: relative;
+  min-height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 28px;
+  background:
+    radial-gradient(ellipse 90% 70% at 30% 20%, rgba(0, 240, 255, .28) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 80% at 80% 100%, rgba(176, 38, 255, .35) 0%, transparent 70%),
+    var(--ink-800, #14082e);
+  border-right: 1px solid var(--border);
+}
+.proj-preview.cool { }
+.proj-preview-name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: -.01em;
+  color: #fff;
+  text-shadow: 0 0 24px rgba(0, 240, 255, .6);
+  text-align: center;
+}
+
+.proj-body { padding: 30px 32px 32px; }
+.proj-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  margin-bottom: 14px;
+}
+.proj-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 8px var(--neon-green);
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+.proj-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  font-weight: 800;
+  color: var(--fg-1);
+  line-height: 1.05;
+  margin: 0 0 6px;
+}
+.proj-tagline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  margin-bottom: 18px;
+}
+.proj-summary { color: var(--fg-2); line-height: 1.6; margin-bottom: 14px; font-size: .98rem; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  margin: 26px 0 28px;
+}
+.feature { display: flex; gap: 12px; align-items: flex-start; }
+.feature-icon {
+  flex: none;
+  width: 38px; height: 38px;
+  border-radius: var(--radius-2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--neon-cyan);
+  background: rgba(0, 240, 255, .08);
+  border: 1px solid var(--border-cool, rgba(0, 240, 255, .25));
+}
+.feature h3 { font-family: var(--font-body); font-size: .95rem; font-weight: 700; color: var(--fg-1); margin: 2px 0 4px; }
+.feature p { color: var(--fg-muted); font-size: .84rem; line-height: 1.45; margin: 0; }
+
+.proj-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
 /* ───────── RESPONSIVE ───────── */
+@media (max-width: 860px) {
+  .proj { grid-template-columns: 1fr; }
+  .proj-preview { min-height: 150px; border-right: none; border-bottom: 1px solid var(--border); }
+  .feature-grid { grid-template-columns: 1fr; }
+  .proj-foot { flex-direction: column; align-items: stretch; }
+  .proj-foot .btn { justify-content: center; }
+}
 @media (max-width: 960px) {
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-photo { max-width: 340px; aspect-ratio: 4/5; margin: 0 auto; }
